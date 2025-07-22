@@ -12,5 +12,10 @@
 
 --Login
     UI + API integrated
+    install axios
+    Solve CORS - install cords in the BE, add middleware with configuration- origin, credentials:true
+    Get Token in the cookies
+
+
 
 
