@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios'
 import { addUser } from './utils/userSlice'; // <-- Adjust the path if needed
+import {useNavigate} from 'react-router-dom';
 
-
+import {BASE_URL} from './utils/constants'
 
 
 const Login = () => {
@@ -11,19 +12,22 @@ const Login = () => {
     const [password, setPassword] = useState("Macbook@123");
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
 
 
 
     const handleSubmit = async () => {
         console.log(email, password)
         try {
-            const res = await axios.post('http://localhost:3000/login', {
+            const res = await axios.post(BASE_URL+'/login', {
                 email,
                 password
             }, { withCredentials: true })
 
             console.log(res.data, "res")
             dispatch(addUser(res.data))
+            navigate('/')
         } catch (err) {
             console.log(err)
         }
