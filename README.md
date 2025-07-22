@@ -21,7 +21,8 @@
     configure Store - privide the store
     create slice - add reducer to store
     setup extension - npm install --save-dev @redux-devtools/core
-    
+    confirgure the extension. - devTools: process.env.NODE_ENV !== 'production',
+
     
 
 
