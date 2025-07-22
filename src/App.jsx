@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux';
 
-import NavBar from './NavBar';
-import Body from './Body';
-import Login from './Login';
-import Profile from './Profile';
-import Footer from './Footer';
+import NavBar from './components/NavBar';
+import Body from './components/Body';
+import Login from './components/Login';
+import Profile from './components/Profile';
+import Footer from './components/Footer';
 import appStore from './utils/appStore'
-import Feed from './Feed';
+import Feed from './components/Feed';
 
 
 function App() {
