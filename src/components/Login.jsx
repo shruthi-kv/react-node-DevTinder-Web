@@ -2,19 +2,19 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios'
 import { addUser } from '../utils/userSlice'; // <-- Adjust the path if needed
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import {BASE_URL} from '../utils/constants'
+import { BASE_URL } from '../utils/constants'
 
 
 const Login = () => {
     // const [email, setemail] = useState("Macbook@gmail.com");
     // const [password, setPassword] = useState("Macbook@123");
 
-        const [email, setemail] = useState("shruthi@gmail.com");
+    const [email, setemail] = useState("shruthi@gmail.com");
     const [password, setPassword] = useState("Shruthi@123");
     const [error, setError] = useState('');
-    
+
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Login = () => {
     const handleSubmit = async () => {
 
         try {
-            const res = await axios.post(BASE_URL+'/login', {
+            const res = await axios.post(BASE_URL + '/login', {
                 email,
                 password
             }, { withCredentials: true })

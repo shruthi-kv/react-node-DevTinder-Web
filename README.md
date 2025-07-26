@@ -32,7 +32,8 @@
 - GET the feed
 - Add the feed in the store
 
-
+- Edit Profile
+- Feed 
 
 
 
