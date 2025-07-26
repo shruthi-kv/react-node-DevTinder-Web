@@ -29,6 +29,9 @@
 
 - Logout Feature
 
+- GET the feed
+- Add the feed in the store
+
 
 
 
