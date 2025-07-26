@@ -26,6 +26,8 @@
 -   Security Check
     - token based Login
 
+- Logout Feature
+
 
 
 

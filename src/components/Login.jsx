@@ -13,6 +13,7 @@ const Login = () => {
 
         const [email, setemail] = useState("shruthi@gmail.com");
     const [password, setPassword] = useState("Shruthi@123");
+    const [error, setError] = useState('');
     
 
     const dispatch = useDispatch();
@@ -22,18 +23,19 @@ const Login = () => {
 
 
     const handleSubmit = async () => {
-        console.log(email, password)
+
         try {
             const res = await axios.post(BASE_URL+'/login', {
                 email,
                 password
             }, { withCredentials: true })
 
-            console.log(res.data, "res")
+
             dispatch(addUser(res.data))
             navigate('/')
         } catch (err) {
-            console.log(err)
+
+            setError(err?.response?.data || 'Something went Wrong')
         }
 
     }
@@ -52,6 +54,7 @@ const Login = () => {
                         <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Type here" />
                     </fieldset>
                 </div>
+                <p className="text-red-500">{error}</p>
                 <div class="card-actions justify-center m-2">
                     <button class="btn btn-primary" onClick={handleSubmit}>Login</button>
                 </div>
