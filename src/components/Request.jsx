@@ -2,7 +2,7 @@ import axios from 'axios'
 import { BASE_URL } from '../utils/constants'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addrequest } from '../utils/requestSlice';
+import { addrequest,removerequest } from '../utils/requestSlice';
 
 
 const Request = () => {
@@ -15,6 +15,7 @@ const Request = () => {
             const res = await axios.get(BASE_URL + '/user/requests/received', { withCredentials: true })
             dispatch(addrequest(res?.data?.data));
             console.log(res?.data?.data,"---llldata")
+            
         } catch (err) {
             console.log(err.message)
         }
@@ -40,7 +41,7 @@ const Request = () => {
         try{
             console.log(BASE_URL + '/request/review/' + status + "/" + _id , {}, { withCredentials: true })
            const res = await axios.post(BASE_URL + '/request/review/' + status + "/" + _id , {}, { withCredentials: true })
-
+            dispatch(removerequest( _id));
         }catch(err){
             console.log(err.message)
         }
