@@ -37,4 +37,6 @@
 
 - Connections (send and accepted) and (recieved and accepted)
 
+- Requests recieved (sent connections)
+
 
