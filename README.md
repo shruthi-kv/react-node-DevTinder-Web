@@ -35,5 +35,6 @@
 - Edit Profile
 - Feed 
 
+- Connections (send and accepted) and (recieved and accepted)
 
 
