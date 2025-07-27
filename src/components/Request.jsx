@@ -14,7 +14,7 @@ const Request = () => {
         try {
             const res = await axios.get(BASE_URL + '/user/requests/received', { withCredentials: true })
             dispatch(addrequest(res?.data?.data));
-            console.log(res?.data?.data,"---llldata")
+       
             
         } catch (err) {
             console.log(err.message)
@@ -25,7 +25,7 @@ const Request = () => {
         fetchRequest()
     }, [])
 
-    console.log(requests)
+
 
     if (!requests) return;
     if (requests.length === 0) return <h1>No requests Found !</h1>
@@ -37,9 +37,9 @@ const Request = () => {
     //accepted or rejected
 
     const reviewRequest = async(status,_id) =>{
-        console.log(status,_id)
+
         try{
-            console.log(BASE_URL + '/request/review/' + status + "/" + _id , {}, { withCredentials: true })
+         
            const res = await axios.post(BASE_URL + '/request/review/' + status + "/" + _id , {}, { withCredentials: true })
             dispatch(removerequest( _id));
         }catch(err){

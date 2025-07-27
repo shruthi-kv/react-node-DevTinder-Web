@@ -53,7 +53,7 @@ const Login = () => {
                 password
             }, { withCredentials: true })
 
-            console.log(res,"sign-up data")
+
              dispatch(addUser(res?.data?.data))
              navigate('/profile')
 
@@ -86,7 +86,7 @@ const Login = () => {
                     </fieldset>
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Password </legend>
-                        <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Type here" />
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Type here" />
                     </fieldset>
                 </div>
                 <p className="text-red-500">{error}</p>

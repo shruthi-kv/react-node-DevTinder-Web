@@ -8,10 +8,7 @@ const UserCard = ({user}) => {
      const dispatch = useDispatch();
 
     const handleSendRequest = async(status,_id) => {
-        ///request/send/interested/68847feffd80fadf60f02b69
-        // interested ignored
-        // "interested","ignored"
-        console.log(status, _id)
+
     
         try{
             const res = await axios.post(BASE_URL + '/request/send/' + status + "/" + _id , {}, { withCredentials: true })
