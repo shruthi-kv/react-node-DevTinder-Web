@@ -39,4 +39,7 @@
 
 - Requests recieved (sent connections)
 
+- Send Connection
+- Ignore Connection
+
 
