@@ -31,6 +31,23 @@ const Request = () => {
 
 
 
+
+    // /request/review/accepted/
+    //accepted or rejected
+
+    const reviewRequest = async(status,_id) =>{
+        console.log(status,_id)
+        try{
+            console.log(BASE_URL + '/request/review/' + status + "/" + _id , {}, { withCredentials: true })
+           const res = await axios.post(BASE_URL + '/request/review/' + status + "/" + _id , {}, { withCredentials: true })
+
+        }catch(err){
+            console.log(err.message)
+        }
+    }
+
+
+
     return(
          <div className="text-center my-10">
             <h1 className="text-bold text-white text-3xl">Requests</h1>
@@ -47,8 +64,8 @@ const Request = () => {
                                 <p>{about}</p>
                                 </div>
                                             <div>
-                                <button className="btn btn-primary mx-2">Reject</button>
-                                <button className="btn btn-secondary mx-2">Accept</button>
+                                <button className="btn btn-primary mx-2" onClick={()=>reviewRequest('rejected', request._id)}>Reject</button>
+                                <button className="btn btn-secondary mx-2" onClick={()=> reviewRequest('accepted', request._id)}>Accept</button>
 
                             </div>
 
