@@ -73,20 +73,20 @@ const Login = () => {
                         <>
                             <fieldset className="fieldset">
                                 <legend className="fieldset-legend">First Name</legend>
-                                <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input" placeholder="Type here" />
+                                <input aria-label="First Name" type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input" placeholder="Type here" />
                             </fieldset>
                             <fieldset className="fieldset">
                                 <legend className="fieldset-legend">Last Name </legend>
-                                <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className="input" placeholder="Type here" />
+                                <input  aria-label="Last Name"  type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className="input" placeholder="Type here" />
                             </fieldset>
                         </>}
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Email</legend>
-                        <input type="text" value={email} onChange={(e) => setemail(e.target.value)} className="input" placeholder="Type here" />
+                        <input  aria-label="Email" type="text" value={email} onChange={(e) => setemail(e.target.value)} className="input" placeholder="Type here" />
                     </fieldset>
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Password </legend>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Type here" />
+                        <input  aria-label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Type here" />
                     </fieldset>
                 </div>
                 <p className="text-red-500">{error}</p>

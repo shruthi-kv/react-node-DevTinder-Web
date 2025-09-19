@@ -95,6 +95,9 @@
 - sudo systemctl restart nginx ->  restart the nginx
 - Modify the BASE_URL in the FE repo to /api
     
+
+- Coverage
+    npm test -- --coverage
    
 
     
