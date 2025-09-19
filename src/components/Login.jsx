@@ -93,7 +93,7 @@ const Login = () => {
                 <div class="card-actions justify-center m-2">
                     <button class="btn btn-primary" onClick={isLogin ? handleSubmit : handleSignup}>{isLogin ? 'Login' : 'Sign Up'}</button>
                 </div>
-                <p className="m-auto cursor-pointer py-2 " onClick={() => setIsLoginForm(!isLogin)}>{!isLogin ? 'New User ? Sign Up Here' : 'Existing User ? Login here'}</p>
+                <p className="m-auto cursor-pointer py-2 " onClick={() => setIsLoginForm(!isLogin)}>{isLogin ? 'New User ? Sign Up Here' : 'Existing User ? Login here'}</p>
             </div>
         </div>
         </div>
