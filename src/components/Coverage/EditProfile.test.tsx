@@ -80,22 +80,21 @@ describe("EditProfile Component", () => {
     expect(actions[0].payload.firstName).toBe("AliceUpdated");
   });
 
-//   it("shows error message when API fails", async () => {
-//     mockedAxios.patch.mockRejectedValueOnce({
-//       response: { data: "API Error" },
-//     });
+  it("shows error message when API fails", async () => {
+  mockedAxios.patch.mockRejectedValueOnce({
+    response: { data: "API Error" },
+  });
 
-//     render(
-//       <Provider store={store}>
-//         <EditProfile user={user} />
-//       </Provider>
-//     );
+  render(
+    <Provider store={store}>
+      <EditProfile user={user} />
+    </Provider>
+  );
 
-//     const saveButton = screen.getByText("Save Profile");
-//     fireEvent.click(saveButton);
+  fireEvent.click(screen.getByText("Save Profile"));
 
-//     await waitFor(() => {
-//       expect(screen.getByText("API Error")).toBeInTheDocument();
-//     });
-//   });
+  await waitFor(() => {
+    expect(screen.getByText("API Error")).toBeInTheDocument();
+  });
+});
 });

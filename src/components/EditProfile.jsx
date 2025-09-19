@@ -25,7 +25,7 @@ const EditProfile = ({ user }) => {
         try {
             const res = await axios.patch(BASE_URL + '/profile/edit', { firstName, lastName, age, gender, about, photoURL }, { withCredentials: true });
           
-
+ setError(""); 
             dispatch(addUser(res?.data?.data))
             setShowToast(true)
             setTimeout(()=>{
@@ -70,7 +70,8 @@ const EditProfile = ({ user }) => {
                                 <input type="text" value={photoURL} onChange={(e) => setPhotoURL(e.target.value)} className="input" placeholder="Type here" />
                             </fieldset>
                         </div>
-                        <p className="text-red-500"></p>
+                  
+                         <p className="text-red-500">{error}</p> {/* <-- render error */}
                         <div class="card-actions justify-center m-2">
                             <button onClick={saveProfile} class="btn btn-primary" >Save Profile</button>
                         </div>
