@@ -30,7 +30,7 @@ const Login = () => {
     const handleSubmit = async () => {
 
         try {
-            const res = await axios.post(BASE_URL + '/login', {
+            const res = await axios.post('http://localhost:3000/login', {
                 email,
                 password
             }, { withCredentials: true })

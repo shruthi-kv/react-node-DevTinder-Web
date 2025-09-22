@@ -1,5 +1,23 @@
-# DevTinder-Web
+# DevTinder 🚀  
+A full-stack web application built with **React**, **Node.js**, **Express**, and **MongoDB**.  
 
+---
+
+## 📦 Tech Stack  
+
+- **Frontend**: React, Redux, Tailwind (DaisyUI)  
+
+- **Backend**: Node.js, Express.js, Mongoose  
+
+- **Database**: MongoDB  
+
+- **Authentication & Security**: bcrypt, validator  
+
+- **Dev Tools**: Nodemon, Jest, Supertest  
+
+---
+
+## ⚙️ Setup & Installation  
 - create vite + react application
 - remove the unwanted code
 - install tailwind 
